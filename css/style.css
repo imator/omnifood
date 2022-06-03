@@ -6,17 +6,22 @@
 
  - Font Weight:
  Default:400
+ Medium:500
+ Semi-bold:600
+ Bold:700
+
 
  - Line Height:
   Default:1
-      
+  small:1.05
+  Pragraph Default:1.6     
 
   
   --- 02 COLORS
    
   Primary: #e67e22
   TintS:#fdf2e9
-  Shades:
+  Shades: #cf711f
   Accents:
   #555
   #333
@@ -25,6 +30,7 @@
 
 
   --- 06 BORDER RADIUS
+ default:9px
 
   --- 07 WHITESPACE
  - Spacing System (px):
@@ -50,18 +56,29 @@ body {
   font-weight: 400;
   color: #555;
 }
-.section-hero {
-  background-color: #fdf2e9;
-  padding: 9.6rem 0;
-}
-.hero {
-  max-width: 130rem; /*1300px e kadar auto-resize olur, 1300 den sonra sabit kalır*/
+/* *********************** */
+/* GENERAL REUSABLE COMPONENT */
+/* *********************** */
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
   margin: 0 auto;
+}
+.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
   gap: 9.6rem;
 }
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .heading-primary {
   font-size: 5.2rem;
   font-weight: 700;
@@ -69,11 +86,6 @@ body {
   color: #333;
   letter-spacing: -0.5px;
   margin-bottom: 3.2rem;
-}
-.hero-description {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
 }
 
 .btn:link,
@@ -119,6 +131,82 @@ body {
   margin-right: 1.6rem !important;
 }
 
+/* *********************** */
+/* HEADER */
+/* *********************** */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 2.2rem;
+}
+/* *********************** */
+/* NAVIGATION */
+/* *********************** */
+.main-nav {
+}
+.main-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+  list-style: none;
+}
+.main-nav-link:link,
+.main-nav-link:visited {
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 5s00;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-lilnk:active {
+  color: #cf711f;
+}
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  display: inline-block;
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  background-color: #e67e22;
+  color: #fff;
+}
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+
+/* *********************** */
+/* HERO SECTION */
+/* *********************** */
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 4.8rem 0 9.6rem 0;
+}
+.hero {
+  max-width: 130rem; /*1300px e kadar auto-resize olur, 1300 den sonra sabit kalır*/
+  margin: 0 auto;
+  padding: 0 3.2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 9.6rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
 /* Delivered Meals */
 .delivered-meals {
   display: flex;
@@ -152,4 +240,14 @@ body {
 
 .hero-img {
   width: 100%;
+}
+/* *********************** */
+/* HOW IT WORKS */
+/* *********************** */
+.section-how {
+  padding: 9.6rem 0;
+}
+
+.step-img {
+  width: 50%;
 }
